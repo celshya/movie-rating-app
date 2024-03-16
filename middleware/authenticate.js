@@ -6,7 +6,7 @@ const authenticateToken = (req,res,next)=>{
     if(token==null){
        return res.status(401) //unauthorized
     }
-    jwt.verify(token,process.env.JWT_secret,(err,user)=>{
+    jwt.verify(token,process.env.JWT_SECRET,(err,user)=>{
         if(err){
             return res.sendStatus(403)
         }
